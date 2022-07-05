@@ -26,25 +26,28 @@
         {{ session()->get('message') }}
     </div>
 @endif
-  <p style="text-align: left"><a href="{{('form')}}"><button class="btn btn-success">add data</button></a></p>
+  <p style="text-align: left"><a href="{{('blog.form')}}"><button class="btn btn-success">add data</button></a></p>
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>Sr no.</th>
         <th>title</th>
         <th>description</th>
+        <th>status</th>
+        
         <th>action</th>
 
       </tr>
     </thead>
     <tbody>
         @foreach ($shiv as $shiv )
-        <tr>
+        {{-- <tr>
             <td>{{$shiv->id}}</td>
             <td>{{$shiv->title}}</td>
             <td>{{$shiv->description}}</td>
-            <td><a href="{{Route('edit',$shiv->id)}}"><button class="btn btn-success">EDIT</button></a><a href="{{Route('delete',$shiv->id)}}"><button class="btn btn-danger">REMOVE</button></a></td>
-          </tr>
+            <td><a href="{{Route('edit',$shiv->id)}}"><button class="btn btn-success">EDIT</button></a>
+                <a href="{{Route('delete',$shiv->id)}}"><button class="btn btn-danger">REMOVE</button></a></td>
+          </tr> --}}
 
         @endforeach
 
