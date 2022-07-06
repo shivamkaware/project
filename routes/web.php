@@ -39,6 +39,8 @@ require __DIR__.'/auth.php';
 // Route::get('edit/{id}',[ShivController::class,'edit'])->name('edit')->middleware('auth');
 // Route::post('update/{id}',[ShivController::class,'update'])->name('update')->middleware('auth');
 // Route::get('delete/{id}',[ShivController::class,'delete'])->name('delete')->middleware('auth');
+Route::get('/',[FrontController::class,'index'])->name('welcome');
+Route::get('post/{id}',[FrontController::class,'show'])->name('post.show');
 
 Route::middleware(['auth'])->group(function () {
 //     Route::post('store',[ShivController::class,'store'])->name('store');
@@ -69,8 +71,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('categories/edit/{id}',[CategoryController::class,'edit'])->name('categories.edit');
     Route::get('delete/{id}',[CategoryController::class,'delete'])->name('delete');
     // Front route
-    Route::get('/',[FrontController::class,'index'])->name('welcome');
-    Route::get('post/{id}',[FrontController::class,'show'])->name('post.show');
+    // Route::get('/',[FrontController::class,'index'])->name('welcome');
+    // Route::get('post/{id}',[FrontController::class,'show'])->name('post.show');
 });
 
 

@@ -27,10 +27,10 @@
     <input type="text" name="name" class="form-control"  placeholder="Enter name" value="{{old('name')}}" required>
   </div>
 
-  <div class="card-body">
+
     <div class="form-group">
       <label for="exampleInputEmail1">Status</label>
-      <select name="status" class="form-control" required value="{{old('status')}}" >
+      <select name="status" class="form-control"  value="{{old('status')}}" required>
       <option value="" class="option_color">select status</option>
       <option value="1">Active</option>
       <option value="0">Deactive</option>

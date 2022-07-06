@@ -27,7 +27,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Description</label>
-   <textarea type="text" name="description" id="" class="form-control"  cols="30" rows="5" >{{$product->description}}</textarea>
+   <textarea type="text" name="description" id="body" class="form-control"  cols="30" rows="5" >{{$product->description}}</textarea>
   </div>
 
     <div class="form-group">
@@ -61,5 +61,13 @@
 </div>
 </div>
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#body' ) )
+    .catch( error => {
+    console.error( error );
+    } );
+    </script>
 
 @endsection

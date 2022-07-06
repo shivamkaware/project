@@ -97,7 +97,7 @@
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
             <table class="table table-hover text-nowrap">
-                {{$product->links()}}
+              <p align="bottom left">  {{$product->links()}}
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -114,7 +114,10 @@
                     <tr>
                     <td>{{$product->id}}</td>
                     <td>{{$product->title}}</td>
-                    <td>{{$product->description}}</td>
+                    <td>
+                        {!! Str::words($product->description,10,'...')!!}
+                        {{-- {!!$product->description!!} --}}
+                    </td>
                     <td>{{@$product->category->name}}</td>
                     <td>@if ($product->status ==1)
                         <span class="badge badge-primary">Active</span>
@@ -136,6 +139,7 @@
                   @endforeach
 
                 </tbody>
+
             </table>
 
         </div>

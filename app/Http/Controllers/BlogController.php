@@ -62,6 +62,14 @@ class BlogController extends Controller
         $product->description=$request->description;
         $product->status=$request->status;
         $product->category_id=$request->category_id;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('uploads_image',$filename);
+            $product->image = $filename;
+
+        }
         $product->save();
         return redirect()->route('blog.table')->with('message','update successfully');
     }

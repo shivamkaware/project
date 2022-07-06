@@ -155,7 +155,7 @@
                                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('login') }}">login</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -182,7 +182,11 @@
                                     <div class="card-body">
                                         <div class="small text-muted">{{$featured_blog->created_at}}</div>
                                         <h2 class="card-title">{{$featured_blog->title}}</h2>
-                                        <p class="card-text">{{$featured_blog->description}}</p>
+                                        <p class="card-text">
+                                            {{-- {!! Str::words($featured_blog->description, 5,'...')!!} --}}
+                                             {{-- {{ Str::words($featured_blog->description,2,'...')}} --}}
+                                             {!!$featured_blog->description!!}
+                                        </p>
                                         <a class="btn btn-primary" href="{{route('post.show',$featured_blog->id)}}">Read more →</a>
                                     </div>
                                 </div>
@@ -205,7 +209,7 @@
                                             <div class="card-body">
                                                 <div class="small text-muted">{{$blog->created_at}}</div>
                                                 <h2 class="card-title h4">{{$blog->title}}</h2>
-                                                <p class="card-text">{{$blog->description}}</p>
+                                                <p class="card-text">{!!$blog->description!!}</p>
                                                 <a class="btn btn-primary" href="{{route('post.show',$blog->id)}}">Read more →</a>
                                             </div>
                                         </div>
@@ -276,6 +280,7 @@
                                     </div>
                                 </div> --}}
                                 <!-- Categories widget-->
+
                                 <div class="card mb-4">
                                     <div class="card-header">Categories</div>
                                     <div class="card-body">
