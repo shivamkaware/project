@@ -148,7 +148,7 @@
                     <!-- Responsive navbar-->
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div class="container">
-                            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                            <a class="navbar-brand" href="{{route('welcome')}}">Blog Application</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -249,10 +249,13 @@
                                     </div> --}}
                                 </div>
                                 <!-- Pagination-->
-
+                                <nav aria-label="Pagination">
+                                    <hr class="my-0" />
+                                    <ul class="pagination justify-content-center my-4">
 
                                 {{$blogs->links()}}
-
+                                    </ul>
+                                </nav>
 
                                 {{-- <nav aria-label="Pagination">
                                     <hr class="my-0" />
@@ -285,18 +288,20 @@
                                     <div class="card-header">Categories</div>
                                     <div class="card-body">
                                         <div class="row">
+                                            @foreach ($categories as $cat)
                                             <div class="col-sm-6">
                                                 <ul class="list-unstyled mb-0">
 
-                                                    @foreach ($categories as $cat)
+
                                                     <li> <a href="">{{$cat->name}}</a> </li>
 
-                                                    @endforeach
+
                                                     {{-- <li><a href="#!">Web Design</a></li>
                                                     <li><a href="#!">HTML</a></li>
                                                     <li><a href="#!">Freebies</a></li> --}}
                                                 </ul>
                                             </div>
+                                            @endforeach
                                             {{-- <div class="col-sm-6">
                                                 <ul class="list-unstyled mb-0">
                                                     <li><a href="#!">JavaScript</a></li>
@@ -308,10 +313,10 @@
                                     </div>
                                 </div>
                                 <!-- Side widget-->
-                                <div class="card mb-4">
+                                {{-- <div class="card mb-4">
                                     <div class="card-header">Side Widget</div>
                                     <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

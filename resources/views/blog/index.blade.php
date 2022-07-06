@@ -115,7 +115,7 @@
                     <td>{{$product->id}}</td>
                     <td>{{$product->title}}</td>
                     <td>
-                        {!! Str::words($product->description,10,'...')!!}
+                        {!! Str::words($product->description,5,'...')!!}
                         {{-- {!!$product->description!!} --}}
                     </td>
                     <td>{{@$product->category->name}}</td>

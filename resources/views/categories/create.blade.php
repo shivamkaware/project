@@ -31,7 +31,7 @@
     <div class="form-group">
       <label for="exampleInputEmail1">Status</label>
       <select name="status" class="form-control"  value="{{old('status')}}" required>
-      <option value="" class="option_color">select status</option>
+      <option value="" class="option_color" >select status</option>
       <option value="1">Active</option>
       <option value="0">Deactive</option>
       </select>

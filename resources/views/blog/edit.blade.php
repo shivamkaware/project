@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 <h2>edit information</h2>
-<form action="{{route('blog.update',$product->id)}}" method="POST" >
+<form action="{{route('blog.update',$product->id)}}" method="POST" enctype="multipart/form-data" >
     @csrf
 {{-- @if ($errors->any())
 <div class="alert alert-danger">
@@ -35,8 +35,8 @@
 
         <select name="status" class="form-control" value="{{$product->status}} >
           <option value="" class="option_color">select status</option>
-        <option value="1">Active</option>
-        <option value="0">Deactive</option>
+        <option value="1"@if($product->status=='1') selected='selected'@endif>Active</option>
+        <option value="0" @if($product->status=='0') selected='selected'@endif>Deactive</option>
         </select>
     </div>
     <div class="form-group">
